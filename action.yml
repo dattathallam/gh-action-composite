@@ -1,0 +1,30 @@
+name: 'Composite Greeter'
+description: 'Composite action: checks out repo, prints runner OS, then calls the node greeter'
+inputs:
+  name:
+    description: 'Name to greet'
+    required: true
+  greeting:
+    description: 'Greeting word'
+    required: false
+    default: 'Hello'
+outputs:
+  message:
+    description: 'Greeting message from the node action'
+    value: ${{ steps.greet.outputs.message }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Print runner info
+      run: echo "Running on ${{ runner.os }} via composite action"
+      shell: bash
+
+    - name: Call node greeter
+      id: greet
+      uses: dattathallam/gh-action-node@main
+      with:
+        name: ${{ inputs.name }}
+        greeting: ${{ inputs.greeting }}
