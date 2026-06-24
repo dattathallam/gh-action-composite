@@ -22,6 +22,10 @@ runs:
       run: echo "Running on ${{ runner.os }} via composite action"
       shell: bash
 
+    - name: Print action version
+      run: echo "Running Composite Greeter v1.0.1"
+      shell: bash
+
     - name: Call node greeter
       id: greet
       uses: dattathallam/gh-action-node@main
