@@ -12,9 +12,6 @@ outputs:
   message:
     description: 'Greeting message from the node action'
     value: ${{ steps.greet.outputs.message }}
-branding:
-  icon: 'layers'
-  color: 'blue'
 runs:
   using: 'composite'
   steps:
