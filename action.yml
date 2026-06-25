@@ -23,7 +23,11 @@ runs:
       shell: bash
 
     - name: Print action version
-      run: echo "Running Composite Greeter v1.0.1"
+      run: echo "Running Composite Greeter v1.0.2"
+      shell: bash
+
+    - name: Marker
+      run: echo ">>> THIS IS v1.0.2 (newest) — should be blocked by compliance <<<"
       shell: bash
 
     - name: Call node greeter
