@@ -1,0 +1,7 @@
+name: 'Mono B'
+description: 'Probe - a plain composite in a sub-path, pulled in by mono-a of the same repository.'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "mono-b"
+      shell: bash

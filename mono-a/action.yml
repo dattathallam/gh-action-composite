@@ -1,0 +1,8 @@
+name: 'Mono A'
+description: 'Probe - a composite in a sub-path that pulls in another sub-path of its own repository (mono-b).'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "mono-a"
+      shell: bash
+    - uses: dattathallam/gh-action-composite/mono-b@mono-v1
